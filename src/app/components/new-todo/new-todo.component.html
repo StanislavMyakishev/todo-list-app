@@ -2,6 +2,6 @@
   <p>Add Todo</p>
   <label>
     <input type="text" class="todo-input" placeholder="What needs to be done" [(ngModel)]="todoService.todoTitle"
-           (keyup.enter)="todoService.addTodo()">
+           (keyup.enter)="addTodo()">
   </label>
 </div>

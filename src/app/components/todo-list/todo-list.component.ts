@@ -26,11 +26,13 @@ import {Router} from '@angular/router';
 
 export class TodoListComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollList', {static: false}) private myScrollContainer: ElementRef;
+  private scrollAction: boolean;
 
-  constructor(public todoService: TodoInteractionService, private router: Router) {
+  constructor(private todoService: TodoInteractionService, private router: Router) {
   }
 
   ngOnInit() {
+    this.todoService.messageSent.subscribe(message => this.scrollAction = message);
     this.scrollToBottom();
   }
 
@@ -39,8 +41,12 @@ export class TodoListComponent implements OnInit, AfterViewChecked {
   }
 
   scrollToBottom(): void {
+    if (!this.scrollAction) {
+      return;
+    }
     try {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+      this.scrollAction = false;
     } catch (err) {
     }
   }

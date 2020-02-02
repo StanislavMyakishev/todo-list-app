@@ -29,6 +29,13 @@ export class TodoInteractionService {
   private readonly _idForTodo = new BehaviorSubject<number>(4);
   private readonly _filter = new BehaviorSubject<string>('all');
   private readonly _anyRemainingModel = new BehaviorSubject<boolean>(true);
+  private readonly _messageSent = new BehaviorSubject<boolean>(true);
+  messageSent = this._messageSent.asObservable();
+
+
+  sendMessage(message: boolean) {
+    this._messageSent.next(message);
+  }
 
   get todos(): Todo[] {
     return this._todos.getValue();
@@ -88,6 +95,7 @@ export class TodoInteractionService {
     ];
     this.todoTitle = '';
     this.idForTodo++;
+    this.sendMessage(true);
   }
 
   updateTodo(todoID: number, todoTitle: string): void {

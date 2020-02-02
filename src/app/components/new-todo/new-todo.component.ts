@@ -13,4 +13,8 @@ export class NewTodoComponent implements OnInit {
   ngOnInit() {
     this.todoService.todoTitle = '';
   }
+
+  addTodo(): void {
+    this.todoService.addTodo();
+  }
 }
