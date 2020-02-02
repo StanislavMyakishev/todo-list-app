@@ -1,0 +1,12 @@
+<div class="nested edit-todo">
+  <p>Edit Todo</p>
+  <label>
+    <input
+      type="text" class="todo-input"
+      [(ngModel)]="todoService.todoTitle"
+      (blur)="cancelEdit()"
+      (keyup.enter)="doneEdit()"
+      (keyup.esc)="cancelEdit()"
+    >
+  </label>
+</div>

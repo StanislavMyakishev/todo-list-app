@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="nested add-button">
+    <button class="btn-block" (click)="openAdd()">Create new Todo</button>
+  </div>
+  <div #scrollList class="nested todo-list">
+    <div class="todo-item" *ngFor="let todo of todoService.filteredTodos()" @fade>
+      <div class="todo-item-left">
+        <label class="checkboxContainer todo-checkbox">
+          <input type="checkbox" [(ngModel)]="todo.completed">
+          <span class="checkMark"></span>
+        </label>
+        <p class="todo-item-label" [ngClass]="{ 'completed' : todo.completed }">{{ todo.title }}</p>
+      </div>
+
+      <div class="controls">
+        <div class="control-item" (click)="openEdit(todo.id)">
+          <p>edit</p>
+        </div>
+        <div class="control-item" (click)="todoService.removeTodo(todo.id)">
+          &times;
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nested">
+    <div class="extra-container">
+      <label class="checkboxContainer">
+        <input type="checkbox" (change)="todoService.checkAllTodos()"
+               [(ngModel)]="!todoService.anyRemainingModel">Check All
+        <span class="checkMark"></span>
+      </label>
+      <div>{{ todoService.remaining() }} items left</div>
+    </div>
+    <div class="extra-container">
+      <div>
+        <button class="button-filter" [ngClass]="{'active': todoService.filter === 'all'}"
+                (click)="todoService.filter='all'">All
+        </button>
+        <button class="button-filter" [ngClass]="{'active': todoService.filter === 'active'}"
+                (click)="todoService.filter='active'">Active
+        </button>
+        <button class="button-filter" [ngClass]="{'active': todoService.filter === 'completed'}"
+                (click)="todoService.filter='completed'">Completed
+        </button>
+      </div>
+      <div *ngIf="todoService.atLeastOneCompleted()">
+        <button (click)="todoService.clearCompleted()">Clear Completed</button>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

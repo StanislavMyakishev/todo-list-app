@@ -1,0 +1,28 @@
+.edit-todo {
+  text-align: center;
+}
+
+.nested {
+  grid-area: main;
+  margin: -1px 0 0 -1px;
+  border: 2px solid #FBC02D;
+  background-color: #FFF9DB;
+  padding: 0.5em;
+}
+
+.nested > p {
+  margin: 10px;
+}
+
+.todo-input {
+  width: 60%;
+  display: block;
+  margin: 10px auto;
+  height: 30px;
+  padding: 10px 10px;
+  font-size: 18px;
+
+  &:focus {
+    outline: 0;
+  }
+}

@@ -1,0 +1,7 @@
+<div class="nested add-todo">
+  <p>Add Todo</p>
+  <label>
+    <input type="text" class="todo-input" placeholder="What needs to be done" [(ngModel)]="todoService.todoTitle"
+           (keyup.enter)="todoService.addTodo()">
+  </label>
+</div>
