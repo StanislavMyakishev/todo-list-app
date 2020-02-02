@@ -10,17 +10,17 @@ export class TodoInteractionService {
     [
       {
         id: 1,
-        title: 'Finish Angular Screencast',
+        title: 'Add your Todo',
         completed: false,
       },
       {
         id: 2,
-        title: 'Take over world',
+        title: 'Press Enter to confirm',
         completed: false,
       },
       {
         id: 3,
-        title: 'One more thing',
+        title: 'Complete your tasks',
         completed: false,
       },
     ]
