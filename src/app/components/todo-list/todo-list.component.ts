@@ -27,7 +27,7 @@ import {Router} from '@angular/router';
 export class TodoListComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollList', {static: false}) private myScrollContainer: ElementRef;
 
-  constructor(private todoService: TodoInteractionService, private router: Router) {
+  constructor(public todoService: TodoInteractionService, private router: Router) {
   }
 
   ngOnInit() {

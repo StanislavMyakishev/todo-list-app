@@ -7,7 +7,7 @@ import {TodoInteractionService} from '../../services/todo-interaction.service';
   styleUrls: ['./new-todo.component.scss']
 })
 export class NewTodoComponent implements OnInit {
-  constructor(private todoService: TodoInteractionService) {
+  constructor(public todoService: TodoInteractionService) {
   }
 
   ngOnInit() {

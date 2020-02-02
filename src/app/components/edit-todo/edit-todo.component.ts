@@ -12,7 +12,7 @@ export class EditTodoComponent implements OnDestroy {
   todoID: number;
   beforeEditCache: string;
 
-  constructor(private todoService: TodoInteractionService, private ar: ActivatedRoute,
+  constructor(public todoService: TodoInteractionService, private ar: ActivatedRoute,
               private router: Router) {
     this.ar.params.subscribe(param => {
       this.todoID = +param.id;
