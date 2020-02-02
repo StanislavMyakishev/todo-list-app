@@ -11,7 +11,6 @@ import { EditTodoComponent } from './components/edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     TodoListComponent,
     NewTodoComponent,
     EditTodoComponent
