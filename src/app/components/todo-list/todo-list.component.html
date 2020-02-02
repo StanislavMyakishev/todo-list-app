@@ -44,7 +44,7 @@
         </button>
       </div>
       <div *ngIf="todoService.atLeastOneCompleted()">
-        <button (click)="todoService.clearCompleted()">Clear Completed</button>
+        <button class="button-filter" (click)="todoService.clearCompleted()">Clear Completed</button>
       </div>
     </div>
   </div>

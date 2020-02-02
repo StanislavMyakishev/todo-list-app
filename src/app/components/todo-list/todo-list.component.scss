@@ -5,7 +5,7 @@
   grid-gap: 10px;
   max-width: 60vw;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .nested {
@@ -14,7 +14,7 @@
   border-collapse: collapse;
   border: 2px solid #FBC02D;
   background-color: #FFF9DB;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .todo-item {
@@ -42,7 +42,7 @@
     margin: -1px 0 0 -1px;
     border: 2px solid #FBC02D;
     background-color: #FFF9DB;
-    padding: 0.5em;
+    padding: 0.2em;
   }
 
   .todo-item {
@@ -64,20 +64,22 @@
 }
 
 .add-button {
-  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
 }
 
 .todo-list {
-  height: 50vh;
+  height: calc(100vh - 70px - 105px - 118px - 5px);
   overflow: auto;
 }
 
 .btn-block {
   font-size: 20px;
   display: block;
+  height: 100%;
   width: 60%;
   margin: 0 auto;
-  height: 50px;
   border: none;
   background-color: #F57F17;
   cursor: pointer;
@@ -124,7 +126,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 14px;
+  padding-top: 4px;
 }
 
 .button-filter {
