@@ -75,6 +75,9 @@ export class TodoInteractionService {
   }
 
   addTodo(): void {
+    if (this.todoTitle.trim().length === 0) {
+      return;
+    }
     this.todos = [
       ...this.todos,
       {
